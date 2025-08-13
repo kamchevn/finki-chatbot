@@ -9,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Data
+@Table(name = "chat_groups")
 @NoArgsConstructor
 public class Group {
     @Id
@@ -28,5 +29,21 @@ public class Group {
     public Group(String groupName) {
         this.groupName = groupName;
         this.chats = new ArrayList<>();
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public List<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(List<Chat> chats) {
+        this.chats = chats;
     }
 }

@@ -16,10 +16,37 @@ public class Log {
 
     private LocalDateTime promptEntryTime;
     @OneToOne
-    private Prompt prompt;
+    private PromptRequest prompt;
+    @OneToOne
+    private PromptResponse response;
 
-    public Log(Prompt prompt) {
+    public Log(PromptRequest prompt, PromptResponse response) {
         this.prompt = prompt;
+        this.response = response;
         this.promptEntryTime = LocalDateTime.now();
+    }
+
+    public LocalDateTime getPromptEntryTime() {
+        return promptEntryTime;
+    }
+
+    public void setPromptEntryTime(LocalDateTime promptEntryTime) {
+        this.promptEntryTime = promptEntryTime;
+    }
+
+    public PromptRequest getPrompt() {
+        return prompt;
+    }
+
+    public void setPrompt(PromptRequest prompt) {
+        this.prompt = prompt;
+    }
+
+    public PromptResponse getResponse() {
+        return response;
+    }
+
+    public void setResponse(PromptResponse response) {
+        this.response = response;
     }
 }
