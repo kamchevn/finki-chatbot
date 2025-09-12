@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/prompt")
+@CrossOrigin("*")
 public class PromptController {
     private final PromptService promptService;
     private final ChatService chatService;
